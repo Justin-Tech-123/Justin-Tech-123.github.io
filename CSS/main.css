@@ -1,0 +1,109 @@
+/* Base / reset-ish */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --brand: #075AAB;
+  --ink: #111;
+  --bg: #f5f1e6; /* soft beige-ish */
+  --muted: #6b7280;
+}
+
+html { font-size: 100%; }
+body {
+  text-align: center;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Links: keep underlines for affordance; strong hover/focus */
+a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+a:hover,
+a:focus-visible {
+  color: #0a69c8;
+  text-decoration-thickness: 2px;
+}
+a:focus-visible {
+  outline: 2px solid #0a69c8;
+  outline-offset: 2px;
+}
+
+/* Type rhythm */
+h1, h2, h3, h4, h5 { line-height: 1.2; margin: 0; }
+h1 { margin-top: 3rem; margin-bottom: 0.5rem; }
+h2 { margin: 2.5rem 0; color: var(--brand); }
+h3 { margin-top: 2rem; margin-bottom: 0; }
+h4 { margin-top: 0.5rem; margin-bottom: 1rem; }
+h5 { margin-top: 0.5rem; }
+p { margin: 0.75rem 0; }
+
+hr { margin: 3rem 0; }
+
+footer { margin: 2rem 0; text-align: center; }
+
+/* Center only where you mean it */
+#divUp { /* hero container */
+  position: relative;            /* so children can absolutely position relative to this */
+  width: 100%;
+  min-height: clamp(220px, 40vh, 520px); /* responsive height */
+  overflow: hidden;              /* crop the image edges */
+}
+
+/* Full-bleed hero image */
+#image1 {
+  position: absolute; inset: 0;  /* fill the hero */
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay content */
+#divIn {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;                   /* ensure contrast over photo */
+  text-align: left;
+  padding: 0.5rem 1rem;
+  /* add subtle readability gradient behind text */
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0)
+  );
+  border-radius: 0.75rem;
+}
+
+/* The line you had as a quote */
+#pInD {
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4); /* VALID syntax now */
+}
+
+/* The "About Me" headline in the hero */
+#h2InD {
+  margin-top: 0.5rem;            /* 0 was fine; slight breathing room */
+  color: #e9f2ff;                /* ensure it’s readable on dark gradient */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Resume bullets: modern centering without display: table */
+ul {
+  max-width: 65ch;
+  margin-inline: auto;
+  padding-inline-start: 1.25rem; /* keep bullets aligned */
+  text-align: left;
+}
+
