@@ -76,12 +76,12 @@ footer { margin: 2rem 0; text-align: center; }
   text-align: left;
   padding: 0.5rem 1rem;
   /* add subtle readability gradient behind text */
-  background: linear-gradient(
+/*   background: linear-gradient(
     to right,
     rgba(0,0,0,0.45),
     rgba(0,0,0,0.25),
     rgba(0,0,0,0)
-  );
+  ); */
   border-radius: 0.75rem;
 }
 #Umaru {
