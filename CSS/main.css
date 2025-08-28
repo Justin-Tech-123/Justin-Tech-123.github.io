@@ -84,6 +84,13 @@ footer { margin: 2rem 0; text-align: center; }
   );
   border-radius: 0.75rem;
 }
+#Umaru {
+  margin-top: 0.5rem;            /* 0 was fine; slight breathing room */
+  color: #e9f2ff;      
+  font-weight: 700;/* ensure it’s readable on dark gradient */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
 
 /* The line you had as a quote */
 #pInD {
